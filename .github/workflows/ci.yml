@@ -283,7 +283,7 @@ jobs:
     runs-on: ubuntu-24.04-arm
     timeout-minutes: 60
     steps:
-      - uses: https://github.com/taiki-e/checkout-action/blob/HEAD/.github/workflows/ci.yml
+      - uses: taiki-e/checkout-action@v1
       # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
       - run: rm -- Cargo.toml
       - run: env
