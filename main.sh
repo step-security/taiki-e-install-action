@@ -501,7 +501,9 @@ if [[ "${repo_private}" != "false" ]]; then
   if [[ ${sub_curl_exit} -ne 0 ]]; then
     printf 'Timeout or API not reachable. Continuing.\n'
   elif [[ "${sub_response}" == "403" ]]; then
-    bail "This action requires a StepSecurity subscription for private repositories. Learn more: ${docs_url}"
+    printf '::error::This action requires a StepSecurity subscription for private repositories.\n'
+    printf '::error::Learn how to enable a subscription: %s\n' "${docs_url}"
+    exit 1
   fi
 fi
 
