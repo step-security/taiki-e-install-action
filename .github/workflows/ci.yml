@@ -28,7 +28,7 @@ concurrency:
 
 jobs:
   test-manifest-schema:
-    uses: taiki-e/github-actions/.github/workflows/rust-test.yml@2026.9.9
+    uses: taiki-e/github-actions/.github/workflows/rust-test.yml@2026.11.1
     with:
       test-args: --exclude install-action-internal-codegen
       no-std: false
